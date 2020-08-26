@@ -1,0 +1,15 @@
+[Unit]
+Description=Spring Boot Kotlin Example
+After=syslog.target
+
+[Service]
+User=smjxpro
+ExecStart=/usr/bin/java -jar /home/smjxpro/sbk/sbk.jar
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=sbk
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
